@@ -2,7 +2,7 @@
 function shop_selection(){
 	const shop_list={"krishna":{"name":"krishna","image":"https://www.evokad.com/wp-content/uploads/2020/04/Post-COVID-Restaurant-Landscape-1-300x300.jpg","location":"karicode"}};
 	let list=[];
-	let e = document.getElementById('shop');
+	let e = document.getElementById('shop'); 
 	for (const [key, value] of Object.entries(shop_list)) {
 		if(key.startsWith(e.value)  && e.value != ""){
   			list.push(value);
