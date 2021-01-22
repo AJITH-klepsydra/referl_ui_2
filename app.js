@@ -1,6 +1,6 @@
 
 function shop_selection(){
-	const shop_list={"krishna":{"name":"krishna","image":"https://www.evokad.com/wp-content/uploads/2020/04/Post-COVID-Restaurant-Landscape-1-300x300.jpg","location":"karicode"}};
+	const shop_list={"kna":{"name":"krishna","image":"https://www.evokad.com/wp-content/uploads/2020/04/Post-COVID-Restaurant-Landscape-1-300x300.jpg","location":"karicode"},"krishna":{"name":"krishna","image":"https://www.evokad.com/wp-content/uploads/2020/04/Post-COVID-Restaurant-Landscape-1-300x300.jpg","location":"karicode"}};
 	let list=[];
 	let e = document.getElementById('shop');
 	for (const [key, value] of Object.entries(shop_list)) {
@@ -14,7 +14,7 @@ for(let i=0;i<list.length;i++){
 	a.setAttribute('onclick','show_offers(this)');
 	a.setAttribute('name',list[i]['name']);
 	let card = document.createElement('div');
-	card.setAttribute("class","card");
+	card.setAttribute("class","card2");
 	let image = document.createElement('img');
 	image.setAttribute("src",list[i]['image']);
 	let h = document.createElement('h4');

@@ -1,4 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+:root {
+  --color: #3c3163;
+  --transition-time: 0.5s;
+}
 body{
 	margin: 0;
 	padding: 0;
@@ -100,7 +104,7 @@ ul{
 	padding:0;
 }
 .the_list{
-	background: rgba(214, 133, 90, 0.5);
+	background: #3FC1C9;
 border-radius: 5px;
 	margin: 0;
 	padding: 5px;
@@ -122,9 +126,10 @@ border-radius: 5px;
 
 }
 .key{
-	background: rgba(214, 133, 90, 0.7);
+	background: #364F6B;
 	border-radius: 5px;
-	color:black;
+	color: white;
+
 }
 .generate{
 	height: 25px;
@@ -204,9 +209,10 @@ border-radius: 5px;
 	text-align: center;
 }
 .title{
-	padding-top: 10vh;
+	padding-top: 20px;
 	font-size: 30px;
 	color: #777777;
+
 
 }
 #loginScreen input{
@@ -216,8 +222,18 @@ border-radius: 5px;
 	margin-left: 30vw;
 	font-size: 15px;
 	color: grey;
-	
+  	border: none;
+  	border-radius: 0.4rem;
+  	transition: box-shadow var(--transitionDuration);
 	outline: none;
+	background-color: #eee;
+}
+#loginScreen input:focus {
+  outline: none;
+  box-shadow: 0.2rem 0.8rem 1.6rem grey;
+}
+#loginScreen input::placeholder {
+  color: #B0BEC5;
 }
 .shops{
 	width: 40vw;
@@ -228,7 +244,7 @@ border-radius: 5px;
 
 
 }
-.card {
+.card2 {
 	border-radius: 5px;
 	background-color: white;
 	margin: 25px;
@@ -236,7 +252,7 @@ border-radius: 5px;
 }
 
 
-.card  img {
+.card2  img {
 	width: 10vw;
 	padding: 0;
 	margin: 0;
@@ -245,46 +261,20 @@ border-radius: 5px;
 
 }
 
-.card h4 {
+.card2 h4 {
 	color: black;
 	margin: 0;
 	padding: 0;
 	text-align: center;
 }
-.card p{
+.card2 p{
 	margin:0;
 	padding: 0;
 	text-align: center;
 	color: grey;
 	padding-bottom: 5px;
 }
-.offer{
-	border-radius: 10px;
-	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-	padding: 10px;
-	margin: 20px;
-	width: 200px;
-	
 
-}
-.offer h1{
-	font-size: 45px;
-	padding: 0px;
-	margin: 0;
-}
-.offer p{
-	padding: 0;
-	margin: 0;
-	color:grey;
-	font-style: italic;
-	text-align: center;
-}
-.offer b{
-	color: grey;
-	padding: 3px;
-	font-size: 10px;
-	text-align: center;
-}
 /* width */
 ::-webkit-scrollbar {
   width: 10px;
@@ -316,6 +306,8 @@ padding: 10px;
 display: inline-block;
 margin: 20px;
 transition: all 0.3s ease 0s;
+padding-left: 25px;
+padding-right: 25px;
 }
 .example_e:hover {
 color: #404040 !important;
@@ -327,4 +319,147 @@ background: none;
 transition: all 0.3s ease 0s;
 }
 
+a {
+  color: inherit;
+}
 
+.cards-wrapper {
+}
+
+.card {
+  --bg-filter-opacity: 0.5;
+  background:linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 1)), url(https://i.pinimg.com/originals/77/91/a3/7791a306b0d74957cb1ffab255b18071.jpg);
+  height: 30vh;
+  width:20vw;
+  font-size: 1.5em;
+  color: white;
+  border-radius: 1em;
+  /*margin: 2em;*/
+
+  align-items: flex-end;
+  background-size: cover;
+  background-position: center;
+  transition: all, var(--transition-time);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  margin: 0;
+  margin-top: 2vw;
+  margin-left: 35vw;
+}
+
+.card:hover {
+  transform: rotate(0);
+}
+
+.card h1 {
+  margin: 0;
+  font-size: 20px;
+  text-align: center;
+  padding-top: 0px;
+
+
+}
+
+.card p {
+  font-size: 15px;
+  margin-top: 0.5em;
+  text-align: center;
+  color: #999;
+
+}
+
+.card .tags {
+  display: flex;
+  position: absolute;
+  bottom: 0;
+}
+
+.card .tags .tag {
+  font-size: 0.75em;
+  background: rgba(255,255,255,0.5);
+  border-radius: 0.3rem;
+  padding: 0 0.5em;
+  margin-right: 0.5em;
+  line-height: 1.5em;
+  transition: all, var(--transition-time);
+}
+
+.card:hover .tags .tag {
+  background: var(--color);
+  color: white;
+}
+
+.card .date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.5em;
+  padding: 1em;
+  line-height: 1em;
+  opacity: .8;
+}
+
+.card:before, .card:after {
+  content: '';
+  transform: scale(0);
+  transform-origin: top left;
+  border-radius: 50%;
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  z-index: -5;
+  transition: all, var(--transition-time);
+  transition-timing-function: ease-in-out;
+}
+
+.card:before {
+  background: #ddd;
+  width: 250%;
+  height: 250%;
+}
+
+.card:after {
+  background: white;
+  width: 200%;
+  height: 200%;
+}
+
+.card:hover {
+  color: var(--color);
+}
+
+.card:hover:before, .card:hover:after {
+  transform: scale(1);
+}
+
+.card-grid-space .num {
+  font-size: 3em;
+  margin-bottom: 1.2rem;
+  margin-left: 1rem;
+}
+
+.info {
+  font-size: 1.2em;
+  display: flex;
+  padding: 1em 3em;
+  height: 3em;
+}
+
+.info img {
+  height: 3em;
+  margin-right: 0.5em;
+}
+
+.info h1 {
+  font-size: 1em;
+  font-weight: normal;
+}
+
+.pay{
+	position: relative;
+	padding: 10px;
+	background-color: black;
+	color: white;
+	font-weight: bold;
+}
